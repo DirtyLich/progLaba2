@@ -1,4 +1,4 @@
-#include <intVector.h> // Подключение заголовочного файла intVector.h
+#include "intVector.h" // Подключение заголовочного файла intVector.h
 
 void print_error(int code_error) // Объявление функции print_error с аргументом code_error
 {
@@ -132,7 +132,7 @@ int int_vector_push_back(IntVector *v, int item)
     return 0;
 }
 //функция изменяет размер выделенной памяти для вектора до его фактического размера(то есть уменьшает выделенную память до минимально необходимого размера для хранеения дданных)
- int int_vector_shrint_to_fit(IntVector *v)
+ int int_vector_shrink_to_fit(IntVector *v)
  {
     bool shrink_to_fit_unsuccess = false; //флаг для отслежживания неуддачи уменьшения размера вектора
 
@@ -150,7 +150,7 @@ int int_vector_push_back(IntVector *v, int item)
     return -(int)shrink_to_fit_unsuccess; //возвращаем код ошибки, 0-успех, -1 - неудача
  }
 //функция изменяет размер веткора "v" на размер "new_size"
-int_vector_resize(IntVector *v, size_t new_size)
+ int int_vector_resize(IntVector *v, size_t new_size)
 {
     if(new_size > v -> size) //если новый размер текущего размера вектора 
     {
